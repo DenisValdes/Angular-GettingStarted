@@ -1,0 +1,49 @@
+<div class="card-section">
+    <header class="clear-fix">
+        <h3>{{ pageTitle }}</h3>
+    </header>
+    <div class="search-content clear-fix">
+        <h3>Filter by:</h3>
+        <input type="text" />
+    </div>
+    <div class="card-body clear-fix">
+        <ul class="show-image">
+            <button href="#">Show images</button>
+            <li class="images" *ngFor='let product of products'>
+                <figure>
+                    <img [src]='product.imageUrl' alt="">
+                </figure>
+            </li>
+        </ul>
+        <ul class="product-name">
+            <h3>Name</h3>
+            <li class="product" *ngFor='let product of products'>
+                {{ product.productName }}
+            </li>
+        </ul>
+        <ul class="product-code">
+            <h3>Code</h3>
+            <li class="code" *ngFor='let product of products'>
+                {{ product.productName }}
+            </li>
+        </ul>
+        <ul class="available"> 
+            <h3>Availbale</h3>
+            <li class="available" *ngFor='let product of products'>
+                {{ product.releaseDate }}
+            </li>
+        </ul>
+        <ul class="product-price">
+            <h3>Price</h3>
+            <li class="price" *ngFor='let product of products'>
+                {{ product.price }}
+            </li>
+        </ul>
+        <ul class="rating">
+            <h3>5 star rating</h3>
+            <li class="rating" *ngFor='let product of products'>
+                {{ product.starRating }}
+            </li>
+        </ul>
+    </div>
+</div>

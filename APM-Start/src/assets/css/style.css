@@ -1,6 +1,6 @@
 body{ font-family: 'Source Sans Pro', sans-serif; }
 
-.clear-fix:after{ clear: both; content: ""; display: block; }
+.clearfix:after{ clear: both; content: ""; display: block; }
 
 .card-section{ max-width: 1160px; width: 100%; margin: 0 auto; border-radius: 10px; overflow: hidden; border: solid 1px rosybrown; }
 .card-section header{ background: rosybrown;}
@@ -13,6 +13,8 @@ body{ font-family: 'Source Sans Pro', sans-serif; }
 .card-section .card-body ul{ list-style: none; float: left; margin-right: 50px; }
 .card-section .card-body ul h3{ margin: 0 0 15px; height: 40px; line-height: 40px; }
 .card-section .card-body ul li{ margin-bottom: 10px; height: 50px; line-height: 50px; }
-.card-section .card-body .show-image button{ margin-bottom: 15px; width: 120px; height: 40px; cursor: pointer; transition: all .3s ease; background: rosybrown; text-transform: uppercase; font-weight: 600; color: #fff; text-decoration: none;  border-radius: 10px; border: solid 1px transparent; }
+.card-section .card-body .show-image button{ border: solid 1px transparent; margin-bottom: 15px; width: 120px; height: 40px; cursor: pointer; transition: all .3s ease; background: rosybrown; text-transform: uppercase; font-weight: 600; color: #fff; text-decoration: none;  border-radius: 10px; }
+.card-section .card-body .show-image button:focus{ outline: none; }
+.card-section .card-body .show-image button:hover{ border: solid 1px #000; }
 .card-section .card-body .show-image figure{ height: 50px; margin: 0 auto; }
 .card-section .card-body .show-image figure img{ height: 100%; }

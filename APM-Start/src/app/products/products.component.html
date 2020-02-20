@@ -1,16 +1,16 @@
 <div class="card-section">
-    <header class="clear-fix">
+    <header class="clearfix">
         <h3>{{ pageTitle }}</h3>
     </header>
-    <div class="search-content clear-fix">
+    <div class="search-content clearfix">
         <h3>Filter by:</h3>
         <input type="text" [(ngModel)]='listFilter'/>
     </div>
-    <div class="card-body clear-fix">
+    <div class="card-body clearfix">
     <h3>Results of: {{listFilter}}</h3>
         <ul class="show-image">
             <button (click)='toggleImage()'>{{showImage ? 'Hide':'Show'}} images</button >
-            <li class="images" *ngFor='let product of products'>
+            <li class="images" *ngFor='let product of filteredProducts'>
                 <figure *ngIf='showImage'>
                     <img [src]='product.imageUrl' alt="Product logo" [title]='product.productName'>
                 </figure>
@@ -18,31 +18,31 @@
         </ul>
         <ul class="product-name">
             <h3>Name</h3>
-            <li class="product" *ngFor='let product of products'>
+            <li class="product" *ngFor='let product of filteredProducts'>
                 {{ product.productName }}
             </li>
         </ul>
         <ul class="product-code">
             <h3>Code</h3>
-            <li class="code" *ngFor='let product of products'>
-                {{ product.productCode | lowercase }}
+            <li class="code" *ngFor='let product of filteredProducts'>
+                {{ product.productCode | lowercase | convertToSpaces: '-' }}
             </li>
         </ul>
         <ul class="available"> 
             <h3>Availbale</h3>
-            <li class="available" *ngFor='let product of products'>
+            <li class="available" *ngFor='let product of filteredProducts'>
                 {{ product.releaseDate }}
             </li>
         </ul>
         <ul class="product-price">
             <h3>Price</h3>
-            <li class="price" *ngFor='let product of products'>
+            <li class="price" *ngFor='let product of filteredProducts'>
                 {{ product.price | currency:'USD':'symbol':'1.2-2' }}
             </li>
         </ul>
         <ul class="rating">
             <h3>5 star rating</h3>
-            <li class="rating" *ngFor='let product of products'>
+            <li class="rating" *ngFor='let product of filteredProducts'>
                 {{ product.starRating }}
             </li>
         </ul>

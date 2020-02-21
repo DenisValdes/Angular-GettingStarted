@@ -7,7 +7,7 @@
         <input type="text" [(ngModel)]='listFilter'/>
     </div>
     <div class="card-body clearfix">
-    <h3>Results of: {{listFilter}}</h3>
+    <h3>Results of: {{ listFilter }}</h3>
         <ul class="show-image">
             <button (click)='toggleImage()'>{{showImage ? 'Hide':'Show'}} images</button >
             <li class="images" *ngFor='let product of filteredProducts'>
@@ -42,8 +42,9 @@
         </ul>
         <ul class="rating">
             <h3>5 star rating</h3>
-            <li class="rating" *ngFor='let product of filteredProducts'>
-                {{ product.starRating }}
+            <li class="rating" *ngFor='let product of filteredProducts' [title]="product.starRating">
+               <pm-star [rating]='product.starRating'
+                    (ratingClicked)="onRatingClicked($event)"></pm-star>
             </li>
         </ul>
     </div>

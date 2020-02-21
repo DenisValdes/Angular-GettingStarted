@@ -10,9 +10,11 @@ body{ font-family: 'Source Sans Pro', sans-serif; }
 .card-section .search-content input{ padding: 0 10px; float: left; border-radius: 10px; height: 20px; border: solid 2px firebrick; }
 .card-section .search-content input:focus{ outline: none; }
 .card-section .card-body{ width: 95%; margin: 0 auto; }
-.card-section .card-body ul{ list-style: none; float: left; margin-right: 50px; }
+.card-section .card-body ul{ list-style: none; float: left; margin-right: 40px; }
 .card-section .card-body ul h3{ margin: 0 0 15px; height: 40px; line-height: 40px; }
 .card-section .card-body ul li{ margin-bottom: 10px; height: 50px; line-height: 50px; }
+.card-section .card-body ul li.rating{ cursor: pointer; background: darkcyan; border-radius: 10px; }
+.card-section .card-body ul li .main-content{ margin: 0 auto; overflow: hidden; }
 .card-section .card-body .show-image button{ border: solid 1px transparent; margin-bottom: 15px; width: 120px; height: 40px; cursor: pointer; transition: all .3s ease; background: rosybrown; text-transform: uppercase; font-weight: 600; color: #fff; text-decoration: none;  border-radius: 10px; }
 .card-section .card-body .show-image button:focus{ outline: none; }
 .card-section .card-body .show-image button:hover{ border: solid 1px #000; }

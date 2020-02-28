@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products-list.component';
@@ -29,18 +29,21 @@ import { ProductDetailsGuard } from './products/product-details.guard';
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'products', component: ProductsComponent },
-      { 
-        path: 'products/:id',
-        canActivate: [ProductDetailsGuard],  
-        component: ProductDetailsComponent 
-      },
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
-    ])
+    RouterModule.forRoot(
+      [
+        { path: 'products', component: ProductsComponent },
+        {
+          path: 'products/:id',
+          canActivate: [ProductDetailsGuard],
+          component: ProductDetailsComponent
+        },
+        { path: 'welcome', component: WelcomeComponent },
+        { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+        { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+      ]
+    )
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ HttpClientModule, HttpClient ]
 })
 export class AppModule { }

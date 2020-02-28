@@ -43,8 +43,9 @@
         <ul>
             <h3>5 star rating</h3>
             <li class="rating background" *ngFor='let product of filteredProducts' [title]="product.starRating">
-               <pm-star [rating]='product.starRating'
-                    (ratingClicked)="onRatingClicked($event)">
+                <pm-star [rating]='product.starRating'
+                    (ratingClicked)="onRatingClicked($event)"
+                >
                 </pm-star>
             </li>
         </ul>

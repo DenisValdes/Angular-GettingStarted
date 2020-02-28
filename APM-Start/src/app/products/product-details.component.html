@@ -4,6 +4,28 @@
             <h3>{{ pageTitle }}</h3>
         </div>
         <div class="product-info">
+            <div *ngFor="let product of products" class="clearfix">
+                <div class="left-box">
+                    <ul>
+                        <li><b>Name: </b> {{ product.productName }}</li>
+                        <li><b>Description: </b> {{ product.description }}</li>
+                        <li><b>Date: </b> {{ product.releaseDate }}</li>
+                        <li><b>Code: </b> {{ product.productCode }}</li>
+                        <li><b>Price: </b> {{ product.price | currency:'USD':'symbol':'1.2-2'}}</li>
+                        <li class="rating">
+                            <b>Rating: </b>
+                            <pm-star
+                                [title]="product.starRating"
+                            ></pm-star>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-box">
+                    <figure>
+                        <img [src]='product.imageUrl' alt="product-image"/>
+                    </figure>
+                </div>
+            </div>
             <div class="back-button" (click)='onBack()'>
                 <p>Back</p>
             </div>

@@ -27,7 +27,7 @@ export class ProductsService{
     else{
       errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
     }
-    console.log(errorMessage);
+    alert(errorMessage);
     return throwError(errorMessage);
   }
 }
